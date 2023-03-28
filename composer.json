@@ -1,0 +1,20 @@
+{
+    "name": "selenesoftware/inventory-bundle",
+    "description": "Add Inventory Management Entities to your project.",
+    "type": "symfony-bundle",
+    "require": {
+        "symfony/doctrine-bridge": "^6.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Selenesoftware\\InventoryBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jason Marshall",
+            "email": "JasonMarshallSelene@gmail.com"
+        }
+    ]
+}

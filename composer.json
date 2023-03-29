@@ -1,6 +1,7 @@
 {
     "name": "selenesoftware/inventory-bundle",
     "description": "Add Inventory Management Entities to your project.",
+    "version":"0.0.0",
     "type": "symfony-bundle",
     "require": {
         "symfony/doctrine-bridge": "^6.2"

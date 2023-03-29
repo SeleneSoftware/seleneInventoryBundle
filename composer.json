@@ -8,7 +8,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Selenesoftware\\InventoryBundle\\": "src/"
+            "Selene\\InventoryBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Selene\\InventoryBundle\\Tests": "tests/"
         }
     },
     "authors": [

@@ -1,0 +1,18 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Selene\CMSBundle\:
+        resource: '../src/*'
+
+    Selene\CMSBundle\Controller\:
+        resource: '../src/Controller/*'
+        public: true
+    Selene\CMSBundle\Repository\:
+        resource: '../src/Repository/*'
+        # tags: ['doctrine.repository_service']
+        public: true

@@ -5,6 +5,7 @@ namespace Selene\InventoryBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+use Selene\InventoryBundle\Vendor;
 use Doctrine\ORM\Mapping as ORM;
 use Selene\InventoryBundle\Repository\ProductRepository;
 
@@ -39,6 +40,9 @@ class Product
 
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: Sale::class)]
     private Collection $Sale;
+
+    #[ORM\ManyToOne(inversedBy: 'Product')]
+    private ?Vendor $vendor = null;
 
     public function __construct()
     {

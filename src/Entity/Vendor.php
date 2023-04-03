@@ -3,6 +3,7 @@
 namespace Selene\InventoryBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Selene\InventoryBundle\Entity\Product;
 use Selene\InventoryBundle\Repository\VendorRepository;
 
 #[ORM\Entity(repositoryClass: VendorRepository::class)]
@@ -24,6 +25,9 @@ class Vendor
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $phone = null;
+
+    #[ORM\OneToMany(mappedBy: 'vendor', targetEntity: Product::class)]
+    private Collection $Products;
 
     public function getId(): ?int
     {

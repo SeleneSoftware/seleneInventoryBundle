@@ -2,9 +2,11 @@
 
 namespace Selene\InventoryBundle\Entity;
 
-use Selene\InventoryBundle\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Selene\InventoryBundle\Repository\ProductRepository;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
@@ -34,6 +36,14 @@ class Product
 
     #[ORM\ManyToOne(inversedBy: 'products')]
     private ?Location $location = null;
+
+    #[ORM\OneToMany(mappedBy: 'product', targetEntity: Sale::class)]
+    private Collection $Sale;
+
+    public function __construct()
+    {
+        $this->Sale = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +130,36 @@ class Product
     public function setLocation(?Location $location): self
     {
         $this->location = $location;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Sale>
+     */
+    public function getSale(): Collection
+    {
+        return $this->Sale;
+    }
+
+    public function addSale(Sale $sale): self
+    {
+        if (!$this->Sale->contains($sale)) {
+            $this->Sale->add($sale);
+            $sale->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSale(Sale $sale): self
+    {
+        if ($this->Sale->removeElement($sale)) {
+            // set the owning side to null (unless already changed)
+            if ($sale->getProduct() === $this) {
+                $sale->setProduct(null);
+            }
+        }
 
         return $this;
     }

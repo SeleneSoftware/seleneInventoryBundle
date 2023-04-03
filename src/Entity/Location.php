@@ -1,11 +1,11 @@
 <?php
 
-namespace Selene\InventoryBundle\Entity;
+namespace App\Entity;
 
-use Selene\InventoryBundle\Repository\LocationRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Selene\InventoryBundle\Repository\LocationRepository;
 
 #[ORM\Entity(repositoryClass: LocationRepository::class)]
 class Location

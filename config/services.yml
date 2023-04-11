@@ -6,13 +6,13 @@ services:
         autoconfigure: true
         public: false
 
-    Selene\CMSBundle\:
+    Selene\InventoryBundle\:
         resource: '../src/*'
 
-    Selene\CMSBundle\Controller\:
+    Selene\InventoryBundle\Controller\:
         resource: '../src/Controller/*'
         public: true
-    Selene\CMSBundle\Repository\:
+    Selene\InventoryBundle\Repository\:
         resource: '../src/Repository/*'
         # tags: ['doctrine.repository_service']
         public: true

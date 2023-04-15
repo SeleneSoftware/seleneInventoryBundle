@@ -137,6 +137,18 @@ class Product
         return $this;
     }
 
+    public function getVendor(): ?Vendor
+    {
+        return $this->vendor;
+    }
+
+    public function setVendor(?Vendor $vendor): self
+    {
+        $this->vendor = $vendor;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, Sale>
      */

@@ -23,6 +23,7 @@ class ProductCrudController extends AbstractCrudController
         yield Field\AssociationField::new('location'); // ->setQueryBuilder(
         //         fn (QueryBuilder $queryBuilder) => $queryBuilder->getEntityManager()->getRepository(Location::class)->findBySomeCriteria();
         // );
+        yield Field\AssociationField::new('vendor');
         yield Field\IntegerField::new('qty');
         yield Field\MoneyField::new('cost')->setNumDecimals(0)->setCurrency('USD');
         yield Field\BooleanField::new('public');

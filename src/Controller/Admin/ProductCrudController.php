@@ -2,11 +2,11 @@
 
 namespace Selene\InventoryBundle\Controller\Admin;
 
-use Selene\InventoryBundle\Entity\Location;
-use Selene\InventoryBundle\Entity\Product;
 use Doctrine\ORM\QueryBuilder;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field;
+use Selene\InventoryBundle\Entity\Location;
+use Selene\InventoryBundle\Entity\Product;
 
 class ProductCrudController extends AbstractCrudController
 {

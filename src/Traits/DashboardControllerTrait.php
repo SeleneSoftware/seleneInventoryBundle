@@ -2,10 +2,10 @@
 
 namespace Selene\InventoryBundle\Traits;
 
+use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use Selene\InventoryBundle\Entity\Location;
 use Selene\InventoryBundle\Entity\Product;
-use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
-use Selene\CMSBundle\Controller\Admin\DashboardController;
+use Selene\InventoryBundle\Entity\Vendor;
 
 trait DashboardControllerTrait
 {
@@ -16,5 +16,6 @@ trait DashboardControllerTrait
         }
         yield MenuItem::linkToCrud('Products', 'fas fa-list', Product::class);
         yield MenuItem::linkToCrud('Locations', 'fas fa-list', Location::class);
+        yield MenuItem::linkToCrud('Vendors', 'fas fa-list', Vendor::class);
     }
 }

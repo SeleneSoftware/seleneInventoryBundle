@@ -2,9 +2,9 @@
 
 namespace Selene\InventoryBundle\Repository;
 
-use Selene\InventoryBundle\Entity\Location;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Selene\InventoryBundle\Entity\Location;
 
 /**
  * @extends ServiceEntityRepository<Location>

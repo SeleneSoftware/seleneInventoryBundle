@@ -2,8 +2,8 @@
 
 namespace Selene\InventoryBundle\Controller\Admin;
 
-use Selene\InventoryBundle\Entity\Location;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use Selene\InventoryBundle\Entity\Location;
 
 class LocationCrudController extends AbstractCrudController
 {

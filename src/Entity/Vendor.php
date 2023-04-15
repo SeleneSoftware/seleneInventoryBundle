@@ -3,7 +3,6 @@
 namespace Selene\InventoryBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Selene\InventoryBundle\Entity\Product;
 use Selene\InventoryBundle\Repository\VendorRepository;
 
 #[ORM\Entity(repositoryClass: VendorRepository::class)]
@@ -18,10 +17,13 @@ class Vendor
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $Address = null;
+    private ?string $address = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $url = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $email = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $phone = null;
@@ -48,12 +50,12 @@ class Vendor
 
     public function getAddress(): ?string
     {
-        return $this->Address;
+        return $this->address;
     }
 
-    public function setAddress(?string $Address): self
+    public function setAddress(?string $address): self
     {
-        $this->Address = $Address;
+        $this->address = $address;
 
         return $this;
     }
@@ -66,6 +68,18 @@ class Vendor
     public function setUrl(?string $url): self
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(?string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

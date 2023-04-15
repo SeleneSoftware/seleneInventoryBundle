@@ -2,6 +2,7 @@
 
 namespace Selene\InventoryBundle\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Selene\InventoryBundle\Repository\VendorRepository;
 

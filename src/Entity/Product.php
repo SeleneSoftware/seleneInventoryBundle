@@ -5,7 +5,7 @@ namespace Selene\InventoryBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
-use Selene\InventoryBundle\Vendor;
+use Selene\InventoryBundle\Entity\Vendor;
 use Doctrine\ORM\Mapping as ORM;
 use Selene\InventoryBundle\Repository\ProductRepository;
 

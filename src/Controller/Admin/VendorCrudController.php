@@ -19,5 +19,6 @@ class VendorCrudController extends AbstractCrudController
         yield Field\TextEditorField::new('Address');
         yield Field\TextField::new('url');
         yield Field\TextField::new('phone');
+        yield Field\TextField::new('email');
     }
 }

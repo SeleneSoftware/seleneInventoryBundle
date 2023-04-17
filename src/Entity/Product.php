@@ -22,6 +22,9 @@ class Product
     #[ORM\Column(length: 255)]
     private ?string $sku = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
+
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
@@ -73,6 +76,17 @@ class Product
     public function setSku(string $sku): self
     {
         $this->sku = $sku;
+
+        return $this;
+    }
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

@@ -19,6 +19,7 @@ class ProductCrudController extends AbstractCrudController
     {
         yield Field\TextField::new('name');
         yield Field\TextField::new('sku');
+        yield Field\SlugField::new('slug')->setTargetFieldName('name');
         yield Field\TextEditorField::new('description');
         yield Field\AssociationField::new('location'); // ->setQueryBuilder(
         //         fn (QueryBuilder $queryBuilder) => $queryBuilder->getEntityManager()->getRepository(Location::class)->findBySomeCriteria();

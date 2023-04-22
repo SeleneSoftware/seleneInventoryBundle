@@ -17,10 +17,18 @@ class ProductCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        yield Field\ChoiceField::new('productType')->renderAsNativeWidget()->setChoices([
+            'Single Product' => 'single',
+            'Multiple Product' => 'multiple',
+            'Expandable Product' => 'expand',
+            'Non-Physical Product' => 'nonphys',
+
+        ]);
         yield Field\TextField::new('name');
         yield Field\TextField::new('sku');
         yield Field\SlugField::new('slug')->setTargetFieldName('name');
         yield Field\TextEditorField::new('description');
+        yield Field\ArrayField::new('attributes');
         yield Field\AssociationField::new('location'); // ->setQueryBuilder(
         //         fn (QueryBuilder $queryBuilder) => $queryBuilder->getEntityManager()->getRepository(Location::class)->findBySomeCriteria();
         // );

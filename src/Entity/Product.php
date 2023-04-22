@@ -79,6 +79,7 @@ class Product
 
         return $this;
     }
+
     public function getSlug(): ?string
     {
         return $this->slug;
@@ -192,4 +193,34 @@ class Product
 
         return $this;
     }
+
+    public function getAttribute(): array
+    {
+        return $this->attribute;
+    }
+
+    public function setAttribute(?array $attribute): self
+    {
+        $this->attribute = $attribute;
+
+        return $this;
+    }
+
+    public function getProductType(): ?string
+    {
+        return $this->productType;
+    }
+
+    public function setProductType(string $productType): self
+    {
+        $this->productType = $productType;
+
+        return $this;
+    }
+
+    #[ORM\Column(nullable: true)]
+    private array $attribute = [];
+
+    #[ORM\Column(length: 255)]
+    private ?string $productType = null;
 }

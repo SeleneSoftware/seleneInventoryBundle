@@ -46,6 +46,9 @@ class Product
     #[ORM\ManyToOne(inversedBy: 'Product')]
     private ?Vendor $vendor = null;
 
+    #[ORM\Column(nullable: true)]
+    private array $attribute = [];
+
     public function __construct()
     {
         $this->Sale = new ArrayCollection();
@@ -217,9 +220,6 @@ class Product
 
         return $this;
     }
-
-    #[ORM\Column(nullable: true)]
-    private array $attribute = [];
 
     #[ORM\Column(length: 255)]
     private ?string $productType = null;
